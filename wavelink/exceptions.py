@@ -70,7 +70,7 @@ class NodeException(WavelinkException):
 
 
 class InvalidClientException(WavelinkException):
-    """Exception raised when an invalid :class:`discord.Client`
+    """Exception raised when an invalid :class:`nextcord.Client`
     is provided while connecting a :class:`wavelink.Node`.
     """
 
