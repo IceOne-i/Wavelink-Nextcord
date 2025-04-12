@@ -94,7 +94,7 @@ class Player(nextcord.VoiceProtocol):
     .. note::
 
         Since the Player is a :class:`discord.VoiceProtocol`, it is attached to the various ``voice_client`` attributes
-        in discord.py, including ``guild.voice_client``, ``ctx.voice_client`` and ``interaction.voice_client``.
+        in nextcord, including ``guild.voice_client``, ``ctx.voice_client`` and ``interaction.voice_client``.
 
     Attributes
     ----------
@@ -475,7 +475,7 @@ class Player(nextcord.VoiceProtocol):
 
             Caution should be used when using this method. If this method fails, your player might be left in a stale
             state. Consider handling cases where the player is unable to connect to the new node. To avoid stale state
-            in both wavelink and discord.py, it is recommended to disconnect the player when a RuntimeError occurs.
+            in both wavelink and nextcord, it is recommended to disconnect the player when a RuntimeError occurs.
 
         Parameters
         ----------

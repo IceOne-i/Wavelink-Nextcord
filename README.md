@@ -20,7 +20,7 @@ Wavelink is no longer maintained. Visit [Lavalink Client](https://lavalink.dev/c
 </div>
 
 
-Wavelink is a robust and powerful Lavalink wrapper for [Discord.py](https://github.com/Rapptz/discord.py)
+Wavelink is a robust and powerful Lavalink wrapper for nextcord
 Wavelink features a fully asynchronous API that's intuitive and easy to use.
 
 
@@ -33,7 +33,7 @@ Wavelink features a fully asynchronous API that's intuitive and easy to use.
 
 - Full asynchronous design.
 - Lavalink v4+ Supported with REST API.
-- discord.py v2.0.0+ Support.
+- nextcord v3.0.1+ Support.
 - Advanced AutoPlay and track recommendations for continuous play.
 - Object orientated design with stateful objects and payloads.
 - Fully annotated and complies with Pyright strict typing.
@@ -94,4 +94,4 @@ For spotify support, simply install and use [LavaSrc](https://github.com/topi314
 
 - Wavelink **3** is compatible with Lavalink **v4+**.
 - Wavelink has built in support for Lavalink Plugins including LavaSrc and SponsorBlock.
-- Wavelink is fully typed in compliance with Pyright Strict, though some nuances remain between discord.py and wavelink.
+- Wavelink is fully typed in compliance with Pyright Strict, though some nuances remain between nextcord and wavelink.

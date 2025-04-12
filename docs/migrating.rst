@@ -96,7 +96,7 @@ Connecting in version **3** is similar to version **2**.
 
 .. important::
     
-    It is recommended to use discord.py ``setup_hook`` to connect your nodes.
+    It is recommended to use nextcord.py ``setup_hook`` to connect your nodes.
 
 
 .. code:: python3

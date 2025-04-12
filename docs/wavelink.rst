@@ -13,7 +13,7 @@ Event Reference
 WaveLink Events are events dispatched when certain events happen in Lavalink and Wavelink.
 All events must be coroutines.
 
-Events are dispatched via discord.py and as such can be used with discord.py listener syntax.
+Events are dispatched via nextcord and as such can be used with nextcord listener syntax.
 All Track Events receive the appropriate payload.
 
 

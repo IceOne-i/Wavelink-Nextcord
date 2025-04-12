@@ -6,13 +6,13 @@
 
    <p class="index-featuring">
 
-      <b>A fully asynchronous <a href="https://www.python.org/">Python</a> Lavalink wrapper for discord.py</b>
+      <b>A fully asynchronous <a href="https://www.python.org/">Python</a> Lavalink wrapper for nextcord</b>
 
       <h4>Featuring:</h4>
       <ul class="index-featuring-list">
          <li>Full asynchronous design.</li>
          <li>Lavalink v4+ Supported with REST API.</li>
-         <li>discord.py v2.0.0+ Support.</li>
+         <li>nextcord v3.0.1+ Support.</li>
          <li>Advanced AutoPlay and track recommendations for continuous play.</li>
          <li>Object orientated design with stateful objects and payloads.</li>
          <li>Fully annotated and complies with Pyright strict typing.</li>
