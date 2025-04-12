@@ -31,9 +31,9 @@ import time
 from typing import TYPE_CHECKING, Any, TypeAlias
 
 import async_timeout
-import discord
-from discord.abc import Connectable
-from discord.utils import MISSING
+import nextcord
+from nextcord.abc import Connectable
+from nextcord.utils import MISSING
 
 import wavelink
 
@@ -60,8 +60,8 @@ from .tracks import Playable, Playlist
 if TYPE_CHECKING:
     from collections import deque
 
-    from discord.abc import Connectable
-    from discord.types.voice import (
+    from nextcord.abc import Connectable
+    from nextcord.types.voice import (
         GuildVoiceState as GuildVoiceStatePayload,
         VoiceServerUpdate as VoiceServerUpdatePayload,
     )
@@ -76,7 +76,7 @@ if TYPE_CHECKING:
     from .types.request import Request as RequestPayload
     from .types.state import PlayerBasicState, PlayerVoiceState, VoiceState
 
-    VocalGuildChannel = discord.VoiceChannel | discord.StageChannel
+    VocalGuildChannel = nextcord.VoiceChannel | nextcord.StageChannel
 
 logger: logging.Logger = logging.getLogger(__name__)
 
@@ -84,9 +84,9 @@ logger: logging.Logger = logging.getLogger(__name__)
 T_a: TypeAlias = list[Playable] | Playlist
 
 
-class Player(discord.VoiceProtocol):
-    """The Player is a :class:`discord.VoiceProtocol` used to connect your :class:`discord.Client` to a
-    :class:`discord.VoiceChannel`.
+class Player(nextcord.VoiceProtocol):
+    """The Player is a :class:`nextcord.VoiceProtocol` used to connect your :class:`nextcord.Client` to a
+    :class:`nextcord.VoiceChannel`.
 
     The player controls the music elements of the bot including playing tracks, the queue, connecting etc.
     See Also: The various methods available.
@@ -106,7 +106,7 @@ class Player(discord.VoiceProtocol):
 
     channel: VocalGuildChannel
 
-    def __call__(self, client: discord.Client, channel: VocalGuildChannel) -> Self:
+    def __call__(self, client: nextcord.Client, channel: VocalGuildChannel) -> Self:
         super().__init__(client, channel)
 
         self._guild = channel.guild
@@ -114,12 +114,12 @@ class Player(discord.VoiceProtocol):
         return self
 
     def __init__(
-        self, client: discord.Client = MISSING, channel: Connectable = MISSING, *, nodes: list[Node] | None = None
+        self, client: nextcord.Client = MISSING, channel: Connectable = MISSING, *, nodes: list[Node] | None = None
     ) -> None:
         super().__init__(client, channel)
 
-        self.client: discord.Client = client
-        self._guild: discord.Guild | None = None
+        self.client: nextcord.Client = client
+        self._guild: nextcord.Guild | None = None
 
         self._voice_state: PlayerVoiceState = {"voice": {}}
 
@@ -649,8 +649,8 @@ class Player(discord.VoiceProtocol):
         return self._node
 
     @property
-    def guild(self) -> discord.Guild | None:
-        """Returns the :class:`Player`'s associated :class:`discord.Guild`.
+    def guild(self) -> nextcord.Guild | None:
+        """Returns the :class:`Player`'s associated :class:`nextcord.Guild`.
 
         Could be None if this :class:`Player` has not been connected.
         """
@@ -821,7 +821,7 @@ class Player(discord.VoiceProtocol):
             You tried to connect this player without an appropriate voice channel.
         """
         if self.channel is MISSING:
-            msg: str = 'Please use "discord.VoiceChannel.connect(cls=...)" and pass this Player to cls.'
+            msg: str = 'Please use "nextcord.VoiceChannel.connect(cls=...)" and pass this Player to cls.'
             raise InvalidChannelStateException(f"Player tried to connect without a valid channel: {msg}")
 
         if not self._guild:
@@ -874,7 +874,7 @@ class Player(discord.VoiceProtocol):
 
         self._connection_event.clear()
         self._reconnecting.clear()
-        voice: discord.VoiceState | None = self.guild.me.voice
+        voice: nextcord.VoiceState | None = self.guild.me.voice
 
         if self_deaf is None and voice:
             self_deaf = voice.self_deaf
